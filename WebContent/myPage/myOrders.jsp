@@ -2,8 +2,8 @@
 <%@page import="myShop.mvc.user.biard.MyShopDAO"%>
 <%@page import="myShop.mvc.user.OrdersDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@page import = "java.util.List" %>
+	pageEncoding="UTF-8"%>
+<%@page import="java.util.List"%>
 <h1>myOrders 페이지입니다.</h1>
 
 <%
@@ -41,46 +41,40 @@
     else
     {
 %>
-		<table border="1" width="700" cellpadding="0" cellspacing="0" align="center"> 
-    	<tr height="30" bgcolor="white"> 
-        <td align="center"  width="100" >주문번호</td> 
-        <td align="center"  width="250" >상품</td> 
-        <td align="center"  width="100" >판매자</td>
-        <td align="center"  width="50" >수량</td> 
-        <td align="center"  width="100" >금액</td>
-        <td align="center"  width="100" >주문일자</td>
-        <td align="center"  width="100" >운송장번호</td>
-        </tr>
-<%  
+<table border="1" width="700" cellpadding="0" cellspacing="0" align="center">
+	<tr height="30" bgcolor="white">
+		<td align="center" width="100">주문번호</td>
+		<td align="center" width="250">상품</td>
+		<td align="center" width="100">판매자</td>
+		<td align="center" width="50">수량</td>
+		<td align="center" width="100">금액</td>
+		<td align="center" width="100">주문일자</td>
+		<td align="center" width="100">운송장번호</td>
+	</tr>
+	<%  
 		for (int i = 0 ; i < orderList.size() ; i++) 
 		{
 			OrdersDTO order = (OrdersDTO)orderList.get(i);
         	goods_code = order.getGoods_code(); 
 %>
-   			<tr height="30">
-    		<td align="center"  width="100" > 
-    		<%=order.getOrderNumber()%>주문번호</td>
-    		<td width="250" >
-    		<a href="content.jsp?num=<%=order.getGoods_code()%>&pageNum=<%=currentPage%>">
-    		<%=dao.getCodeName(goods_code)%>상품이름</a> 
-<%//getCode2Name(int goods_code) : return type = String 굿즈 코드 받아서 검색한다음 굿즈네임 리턴해주는 메소드%>
-    		</td>
-    		<td align="center"  width="100">  
-    		<%=order.getSeller() %>판매자</td>
-    		<td align="center"  width="50">
-    		<%= order.getAmount()%>수량</td>
-    		<td align="center"  width="50">
-    		<%= order.getTotalPrice()%>금액</td>
-    		<td align="center" width="100" >
-    		<%=order.getOrderDate()%></td>
-    		<td align="center" width="100" >
-    		<a href="https://www.doortodoor.co.kr/parcel/doortodoor.do?fsp_action=PARC_ACT_002&fsp_cmd=retrieveInvNoACT&invc_no=<%=order.getTrack() %>">
-    		<%=order.getTrack() %></a>
-  			</tr>
-<%
+	<tr height="30">
+		<td align="center" width="100"><%=order.getOrderNumber()%>주문번호</td>
+		<td width="250">
+		<a href="content.jsp?num=<%=order.getGoods_code()%>& pageNum=<%=currentPage%>dao.getCodeName(goods_code)%>">상품이름</a> 
+				<%//getCode2Name(int goods_code) : return type = String 굿즈 코드 받아서 검색한다음 굿즈네임 리턴해주는 메소드%>
+		</td>
+		<td align="center" width="100"><%=order.getSeller() %>판매자</td>
+		<td align="center" width="50"><%= order.getAmount()%>수량</td>
+		<td align="center" width="50"><%= order.getTotalPrice()%>금액</td>
+		<td align="center" width="100"><%=order.getOrderDate()%></td>
+		<td align="center" width="100"><a
+			href="https://www.doortodoor.co.kr/parcel/doortodoor.do?fsp_action=PARC_ACT_002&fsp_cmd=retrieveInvNoACT&invc_no=<%=order.getTrack() %>">
+				<%=order.getTrack() %></a>
+	</tr>
+	<%
 		}
 %>
-		</table>
+</table>
 <%
 }
 %>
@@ -94,18 +88,18 @@
         if (endPage > pageCount) endPage = pageCount;
         
         if (startPage > 10) {    %>
-        <a href="myOrders.jsp?pageNum=<%= startPage - 10 %>">[이전]</a>
+<a href="myOrders.jsp?pageNum=<%= startPage - 10 %>">[이전]</a>
 <%      }
         for (int i = startPage ; i <= endPage ; i++) {  %>
-        <a href="myOrders.jsp?pageNum=<%= i %>">[<%= i %>]</a>
+<a href="myOrders.jsp?pageNum=<%= i %>">[<%= i %>]
+</a>
 <%
         }
         if (endPage < pageCount) {  %>
-        <a href="list.jsp?pageNum=<%= startPage + 10 %>">[다음]</a>
+<a href="list.jsp?pageNum="+<%= startPage + 10 %>>[다음]</a>
 <%
         }
     }
 %>
-</center>
 </body>
 </html>
