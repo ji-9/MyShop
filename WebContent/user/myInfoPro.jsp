@@ -1,4 +1,4 @@
-<%@page import="myShop.mvc.user.UserDAO"%>
+<%@page import="myshop.user.UserDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -12,12 +12,12 @@
 		response.sendRedirect("/myShop/user/loginForm.jsp");
 	}
 %>
-<jsp:useBean id="dto" class="myShop.mvc.user.UserDTO" />
+<jsp:useBean id="dto" class="myshop.user.UserDTO" />
 <jsp:setProperty name="dto" property="*" />
 
 <%
 	UserDAO dao = new UserDAO();
-	dao.update(dto);
+	dao.userUpdate(dto);
 %>
 <script>
 	alert("수정되었습니다.");

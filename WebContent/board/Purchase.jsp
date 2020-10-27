@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import = "myShop.cart.CartDAO" %>
-<%@ page import = "myShop.cart.CartDTO" %>
+<%@ page import = "myshop.cart.CartDAO" %>
+<%@ page import = "myshop.cart.CartDTO" %>
 <%@ page import = "java.util.Vector" %>
 <%@ page import = "java.text.NumberFormat" %>
 
@@ -50,7 +50,6 @@
 <%
 	for(int i=0; i<cartLists.size();i++){
 		cartList = (CartDTO)cartLists.//elementAt(i);
-	}
 %>		
 	<tr>
 		<td align = "center" width="50"><%=++number %></td>

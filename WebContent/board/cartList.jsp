@@ -1,6 +1,6 @@
-<%@page import="myShop.mvc.user.biard.MyShopDAO"%>
-<%@page import="myShop.mvc.user.CartDAO"%>
-<%@page import="myShop.mvc.user.CartDTO"%>
+<%@page import="myshop.goods.MyShopDAO"%>
+<%@page import="myshop.cart.CartDAO"%>
+<%@page import="myshop.cart.CartDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@page import = "java.util.List" %>
