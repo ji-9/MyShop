@@ -22,7 +22,7 @@ public class productDAO {
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
 
-	public void insertProduct(productDTO product) {//ªÛ«∞µÓ∑œ
+	public void insertProduct(productDTO product) {//¬ª√≥√á¬∞¬µ√Æ¬∑√è
 		try {
 			conn = DBCon.getConnection();
 
@@ -46,7 +46,29 @@ public class productDAO {
 		}
 
 	}
-
+	public String getCode2Name(int code) throws Exception
+    	{
+       		String getStr = null;
+       		try
+       		{
+         		String sql = "select goods_name from MyShopGoods where goods_code = ?";
+         		conn = getConnection();
+         		pstmt = conn.prepareStatement(sql);
+         		pstmt.setInt(1, code);
+         		rs = pstmt.executeQuery();
+         		getStr = rs.getString(1);
+       		}
+       		catch (Exception ex) 
+       		{
+         		ex.printStackTrace();
+       		}
+       		finally
+       		{
+          		closeAll();
+       		}
+       
+       		return getStr;
+	}
 	private void closeAll() {
 		if (rs != null) {
 			try {
