@@ -1,7 +1,8 @@
+<%@page import="myShop.mvc.user.OrdersDTO"%>
+<%@page import="myShop.mvc.user.biard.MyShopDAO"%>
+<%@page import="myShop.mvc.user.OrdersDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@page import="order.OrdersDAO" %>
-<%@page import="order.OrdersDTO" %>
 <%@page import = "java.util.List" %>
 <h1>myOrders 페이지입니다.</h1>
 
@@ -61,7 +62,7 @@
     		<%=order.getOrderNumber()%>주문번호</td>
     		<td width="250" >
     		<a href="content.jsp?num=<%=order.getGoods_code()%>&pageNum=<%=currentPage%>">
-    		<%=dao.getCode2Name(goods_code)%>상품이름</a> 
+    		<%=dao.getCodeName(goods_code)%>상품이름</a> 
 <%//getCode2Name(int goods_code) : return type = String 굿즈 코드 받아서 검색한다음 굿즈네임 리턴해주는 메소드%>
     		</td>
     		<td align="center"  width="100">  
@@ -108,5 +109,3 @@
 </center>
 </body>
 </html>
-
-edited...
