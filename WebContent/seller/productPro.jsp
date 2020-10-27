@@ -1,7 +1,7 @@
 %@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-<%@ page import="myshop.seller.*" %>
+<%@page import="myShop.mvc.seller.productDAO"%>
+<%@page import="myShop.mvc.seller.productDTO"%>
 <%@ page import = "java.sql.*" %>
 <%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
 <%@ page import="com.oreilly.servlet.MultipartRequest" %>

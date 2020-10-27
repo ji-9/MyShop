@@ -88,7 +88,7 @@
         if (endPage > pageCount) endPage = pageCount;
         
         if (startPage > 10) {    %>
-<a href="myOrders.jsp?pageNum=<%= startPage - 10 %>">[이전]</a>
+<a href="myOrders.jsp?pageNum=+<%= startPage - 10 %>">[이전]</a>
 <%      }
         for (int i = startPage ; i <= endPage ; i++) {  %>
 <a href="myOrders.jsp?pageNum=<%= i %>">[<%= i %>]

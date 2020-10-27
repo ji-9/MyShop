@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="/view/color.jsp" %>
-
 <%
    String memId = (String)session.getAttribute("memId");
    if(memId == null) {

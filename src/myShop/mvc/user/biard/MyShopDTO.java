@@ -1,7 +1,5 @@
 package myShop.mvc.user.biard;
 
-import java.sql.Timestamp;
-
 public class MyShopDTO {
 
 	private int goods_code;

@@ -52,7 +52,7 @@ public class productDAO {
        		try
        		{
          		String sql = "select goods_name from MyShopGoods where goods_code = ?";
-         		conn = getConnection();
+         		conn = DBCon.getConnection();
          		pstmt = conn.prepareStatement(sql);
          		pstmt.setInt(1, code);
          		rs = pstmt.executeQuery();

@@ -2,8 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ page import = "myShop.cart.CartDAO" %>
 <%@ page import = "myShop.cart.CartDTO" %>
-//로그인정보 dao,dto
-//구매 dao?
 <%@ page import = "java.util.Vector" %>
 <%@ page import = "java.text.NumberFormat" %>
 
